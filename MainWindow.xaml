@@ -1,0 +1,76 @@
+﻿<Window x:Class="FileTransfer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:local="clr-namespace:FileTransfer" xmlns:i1="clr-namespace:Microsoft.VisualBasic;assembly=Microsoft.VisualBasic.Core"
+        mc:Ignorable="d"
+        Title="FileTransfer" Height="600" Width="450" Loaded="Window_Loaded" Closing="Window_Closing" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+
+    <Grid>
+
+
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Margin="269,0,0,0">
+            <Label Content="Ver: 1.0.0.1 | Rel: 06-Jun-2022" Background="AliceBlue" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="181" FontSize="12"/>
+
+
+        </Grid>
+
+
+        <Grid HorizontalAlignment="Left" Height="115" Margin="5,61,0,0" VerticalAlignment="Top" Width="435">
+
+            <Label Content="Copy From:" HorizontalAlignment="Left" Height="38" Margin="5,0,0,0" VerticalAlignment="Top" Width="138" FontSize="16"/>
+            <TextBox x:Name="txtOriginFolder" Text="" IsReadOnly="True" TextWrapping="Wrap" Margin="0,43,99,0" />
+            <Button x:Name="btnOriginFolder" Content="Select" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="336,43,0,20" Click="Button_Click"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="115" Margin="5,215,0,0" VerticalAlignment="Top" Width="435">
+            <Label Content="Copy To:" HorizontalAlignment="Left" Height="38" Margin="5,0,0,0" VerticalAlignment="Top" Width="138" FontSize="16"/>
+            <TextBox x:Name="txtDestFolder" Text="" IsReadOnly="True" TextWrapping="Wrap" Margin="0,43,99,0"/>
+            <Button x:Name="btnDestinationFolder" Content="Select" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="336,43,0,20" Click="btnDestinationFolder_Click"/>
+        </Grid>
+
+        <!--<TextBox x:Name="txtDestFolder" Text="{Binding ViewModelProperty, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" TextWrapping="Wrap" Margin="5,292,109,192"/>-->
+        <Grid HorizontalAlignment="Left" Height="90" Margin="5,462,0,0" VerticalAlignment="Top" Width="435">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="88*"/>
+                <ColumnDefinition Width="57*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Copy Interval (Minute):" HorizontalAlignment="Left" Height="38" Margin="5,0,0,0" VerticalAlignment="Top" Width="180" FontSize="16"/>
+            <TextBox x:Name="txtCopyInterval" Text="" IsReadOnly="False" TextWrapping="Wrap" Margin="0,38,99,0" Grid.ColumnSpan="2"/>
+            <Button x:Name="btnSetInterval" Content="Set" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="72,38,0,0" Click="btnSetInterval_Click" Grid.Column="1"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="92" VerticalAlignment="Top" Width="435" Margin="5,356,0,0">
+            <Label Content="Buffer Folder:" HorizontalAlignment="Left" Height="31" VerticalAlignment="Top" Width="138" FontSize="16"/>
+            <TextBox x:Name="txtTemporaryFolder" Text="" IsReadOnly="True" TextWrapping="Wrap" Margin="0,36,99,0"/>
+            <Button x:Name="btnTemporaryFolder" Content="Select" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="336,36,0,0" Click="btnTemporaryFolder_Click" />
+
+
+        </Grid>
+        <Grid Margin="0,0,181,556">
+
+            <Menu Background="AliceBlue" Height="30" Width="269" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <MenuItem Header="File" Height="30" Width="50" Background="AliceBlue">
+                    <MenuItem Header="Setting" Click="Setting_Click" Background="AliceBlue"/>
+                    <Separator/>
+                    <MenuItem Header="Exit" Click="Exit_Click" Background="AliceBlue"/>
+                    <!--<Separator/>-->
+                    <!--<ComboBox Width="25" Height="20" />-->
+                </MenuItem>
+                <MenuItem Header="Help" Height="30" Width="50" Background="AliceBlue"
+                          VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <MenuItem Header="Log Viewer" Click="LogViewer_Click" Background="AliceBlue"/>
+                    <MenuItem Header="Clear Log" Click="ClearLog_Click" Background="AliceBlue"/>
+                    <MenuItem Header="About" Click="MenuItem_Click" Background="AliceBlue"/>
+                    <!--<Separator/>-->
+                    <!--<ComboBox Width="25" Height="20" />-->
+                </MenuItem>
+            </Menu>
+
+
+        </Grid>
+        <TextBox x:Name="DisplayTime" HorizontalAlignment="Left" Height="28" Margin="269,28,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" IsReadOnly="True" BorderThickness="0"/>
+
+
+    </Grid>
+</Window>

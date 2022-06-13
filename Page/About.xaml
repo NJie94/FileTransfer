@@ -1,0 +1,22 @@
+﻿<Window x:Class="FileTransfer.Page.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileTransfer.Page"
+        mc:Ignorable="d"
+        Title="About" Height="400" Width="300" ResizeMode="NoResize" Closing="Window_Closing">
+    <Grid>
+        <TextBox Text="About:&#xA;Author: Nicholas Hi Kai Jie&#xA;Company: JR Automation, PSB Technologies&#xA;&#xA;Description:&#xA;This program will move data from origin folder to buffer folder, then transfer to HP server drive and delete data in buffer folder. If transfer to drive fail, the data will be store in buffer folder until next successful transfer to HP server. &#xA;&#xA;" 
+                 TextWrapping="Wrap" 
+                 Margin="10,0,10,50"
+                 FontSize="14"/>
+
+        <Button Content="Close" Click="Button_Click" 
+                Margin="0,0,0,6"
+                Width="120"
+                Height="30"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>
