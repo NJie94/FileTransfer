@@ -30,6 +30,9 @@ namespace FileTransfer
 
         public string strLogMessage = "";
 
+        //Interlock for Transfer in Progress
+        public bool bTransfering = false;
+
         //Saved selected Directory
         public string strOriginFolder = "";
         public string strTempFolder = "";
@@ -101,9 +104,9 @@ namespace FileTransfer
 
         private void Timer_tick(object sender, EventArgs e)
         {
-
+            bTransfering = true;
             //Check if Buffer Folder is use or not
-            if(Setting.cbBufferFolderEnable.IsChecked == true )
+            if (Setting.cbBufferFolderEnable.IsChecked == true )
             {
                 // Move file to Temporary Folder before copy to server
                 Page.LogViewer.sLogMessage = "Start to Transfer File to Buffer Folder";
@@ -278,8 +281,8 @@ namespace FileTransfer
                     }
                 }
             }
-           
 
+            bTransfering = false;
         }
 
         private void RefreshTimer_tick(object sender, EventArgs e)
@@ -351,7 +354,8 @@ namespace FileTransfer
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if(App.bDuplicateApp == false)
+
+            if(App.bDuplicateApp == false && bTransfering == false)
             {
                 MessageBoxResult result = System.Windows.MessageBox.Show(" Warning!!! Close this Application will stop transfer data to server!!!!!\n " +
                "Are you sure you want to close the application?", "Close Application",
