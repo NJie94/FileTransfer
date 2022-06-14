@@ -292,6 +292,7 @@ namespace FileTransfer
             if(logviewer.LogEntries.Count >= dClearLogNumber)
             {
                 logviewer.LogEntries.Clear();
+                logviewer.index = 0;
             }
         }
 
@@ -602,6 +603,7 @@ namespace FileTransfer
         private void ClearLog_Click(object sender, RoutedEventArgs e)
         {
             logviewer.LogEntries.Clear();
+            logviewer.index = 0;
         }
         private void Setting_Click(object sender, RoutedEventArgs e)
         {

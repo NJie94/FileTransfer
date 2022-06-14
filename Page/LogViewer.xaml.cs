@@ -67,7 +67,8 @@ namespace FileTransfer.Page
         private string data;
         private List<string> words;
         private int maxword;
-        private int index;
+        //private int index;
+        public int index;
         private string PrevMessage = "";
         private bool AutoScroll = true;
         public System.Timers.Timer DisplayTimer;

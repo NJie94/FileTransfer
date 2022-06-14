@@ -12,7 +12,7 @@
 
 
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Margin="269,0,0,0">
-            <Label Content="Ver: 1.0.0.1 | Rel: 06-Jun-2022" Background="AliceBlue" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="181" FontSize="12"/>
+            <Label Content="Ver: 1.0.0.4 | Rel: 13-Jun-2022" Background="AliceBlue" HorizontalAlignment="Center" Height="30" VerticalAlignment="Center" Width="181" FontSize="12"/>
 
 
         </Grid>
